@@ -1,0 +1,15 @@
+[Unit]
+Description=Mysql for web2Project
+
+[Container]
+Image=docker.io/library/mariadb:lts
+Pod=w2p.pod
+Volume=w2p_mysql.volume:/var/lib/mysql
+
+Environment=MARIADB_RANDOM_ROOT_PASSWORD=yes
+Environment=MYSQL_DATABASE=w2p
+Environment=MYSQL_USER=w2p
+Environment=MYSQL_PASSWORD=__password__
+
+[Install]
+WantedBy=default.target

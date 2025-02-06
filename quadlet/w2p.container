@@ -1,0 +1,12 @@
+[Unit]
+Description=web2Project Quadlet
+Wants=w2p_mysql.service
+After=w2p_mysql.service
+
+[Container]
+Image=quay.io/aps2201/w2p:latest
+Volume=w2p_data.volume:/var/www/html
+Pod=w2p.pod
+
+[Install]
+WantedBy=default.target

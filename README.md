@@ -18,10 +18,14 @@ In the initial system configuration page you should use 127.0.0.1:3306 as the ho
 
 Please be aware however that at the time of writing apparmor has an intermittent [issue on handling permissions](https://github.com/containers/podman/issues/24142) you may be able to start it with no problem but killing the container can have issues.
 
+#### Quadlet
+
+I have created a handy `./qdeploy` script to setup the quadlet as user. All files are in the folder __quadlet/__. You should change the PublishPort in __quadlet/w2p.pod__ to your taste and do not forget to change the MYSQL_PASSWORD in __quadlet/w2p\_mysql.container__. Everything else should be fine as is. Tested in podman 5.3.2.
+
 ### Docker
 
 I have not created a compose file for this project but the image works fine with `docker build -f w2p.Containerfile -t w2p .`
 
 TODO:
 - [ ] Docker compose file
-- [ ] Podman quadlet
+- [x] Podman quadlet

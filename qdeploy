@@ -1,0 +1,11 @@
+#! /usr/bin/fish
+cp --verbose quadlet/* ~/.config/containers/systemd/
+
+sleep 3
+
+systemctl --user daemon-reload
+/usr/lib/systemd/system-generators/podman-system-generator --user --dryrun
+
+systemctl --user start w2p
+
+systemctl --user status w2p

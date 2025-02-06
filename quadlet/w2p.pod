@@ -1,0 +1,4 @@
+[Pod]
+PodName=web2Project
+PublishPort=3306:3306
+PublishPort=8327:80
